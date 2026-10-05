@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+.screen {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.main-button,
+.secondary-button,
+.control {
+    border: 3px solid #fff;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+}
+
+.main-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+    background: #ffff00;
+    font-size: 24px;
+}
+
+.secondary-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    background: #fff;
+    font-size: 19px;
+}
+
+.main-button:hover,
+.secondary-button:hover,
+.control:hover {
+    transform: scale(1.02);
+}
+
+.main-button:focus,
+.secondary-button:focus,
+.control:focus {
+    outline: 5px solid #00ffff;
+}
+
+.help-box {
+    border: 3px solid #fff;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.top-bar div {
+    background: #222;
+    border: 2px solid #fff;
+    padding: 10px 5px;
+    font-size: 16px;
+}
+
+.top-bar span {
+    display: block;
+    font-size: 22px;
+    color: #ffff00;
+    margin-top: 5px;
+}
+
+.instructions {
+    background: #111;
+    border: 2px solid #fff;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.maze {
+    width: min(90vw, 500px);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto 20px;
+    display: grid;
+    border: 4px solid #fff;
+}
+
+.cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wall {
+    background: #000;
+    border: 1px solid #333;
+}
+
+.path {
+    background: #fff;
+}
+
+.player {
+    background: #00ff00;
+    border: 5px solid #000;
+}
+
+.player::after {
+    content: "YOU";
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.goal {
+    background: #ff0000;
+    border: 5px solid #000;
+}
+
+.goal::after {
+    content: "GO";
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hint {
+    outline: 5px solid #00ffff;
+}
+
+.controls {
+    width: 270px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.control {
+    min-height: 75px;
+    background: #ffff00;
+    font-size: 30px;
+}
+
+.control span {
+    display: block;
+    font-size: 11px;
+}
+
+.control.empty {
+    visibility: hidden;
+}
+
+.result-box {
+    border: 3px solid #fff;
+    padding: 15px;
+    margin: 20px 0;
+    background: #111;
+}
+
+.result-box p {
+    font-size: 22px;
+}
+
+.result-box strong {
+    color: #ffff00;
+}
+
+@media (max-width: 400px) {
+
+    .game-container {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .top-bar div {
+        font-size: 13px;
+    }
+
+    .top-bar span {
+        font-size: 18px;
+    }
+
+    .control {
+        min-height: 65px;
+    }
+}

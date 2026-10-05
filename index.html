@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathSense - Accessible Maze Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <section id="menuScreen" class="screen">
+            <h1>PathSense</h1>
+            <p class="subtitle">Accessible Maze Game</p>
+
+            <p>
+                Find your way through the maze and reach the goal.
+            </p>
+
+            <button id="startBtn" class="main-button">
+                START GAME
+            </button>
+
+            <button id="helpBtn" class="secondary-button">
+                HOW TO PLAY
+            </button>
+        </section>
+
+        <section id="helpScreen" class="screen hidden">
+            <h1>How to Play</h1>
+
+            <div class="help-box">
+                <p>🟢 <strong>Green</strong> = Your player</p>
+                <p>🔴 <strong>Red</strong> = Goal</p>
+                <p>⬛ <strong>Black</strong> = Walls</p>
+                <p>⬜ <strong>White</strong> = Path</p>
+            </div>
+
+            <p>Use the large buttons to move.</p>
+            <p>Reach the red goal to complete the level.</p>
+            <p>The game also provides sound feedback.</p>
+
+            <button id="backBtn" class="main-button">
+                BACK
+            </button>
+        </section>
+
+        <section id="gameScreen" class="screen hidden">
+
+            <div class="top-bar">
+                <div>
+                    <strong>Level</strong>
+                    <span id="levelText">1</span>
+                </div>
+
+                <div>
+                    <strong>Score</strong>
+                    <span id="scoreText">100</span>
+                </div>
+
+                <div>
+                    <strong>Steps</strong>
+                    <span id="stepsText">0</span>
+                </div>
+
+                <div>
+                    <strong>Time</strong>
+                    <span id="timeText">0</span>s
+                </div>
+            </div>
+
+            <div class="instructions">
+                Use the controls to find the goal.
+            </div>
+
+            <div id="maze" class="maze"></div>
+
+            <div class="controls">
+
+                <button class="control empty"></button>
+
+                <button class="control" data-direction="up">
+                    ▲
+                    <span>UP</span>
+                </button>
+
+                <button class="control empty"></button>
+
+                <button class="control" data-direction="left">
+                    ◀
+                    <span>LEFT</span>
+                </button>
+
+                <button class="control" id="hintBtn">
+                    ?
+                    <span>HINT</span>
+                </button>
+
+                <button class="control" data-direction="right">
+                    ▶
+                    <span>RIGHT</span>
+                </button>
+
+                <button class="control empty"></button>
+
+                <button class="control" data-direction="down">
+                    ▼
+                    <span>DOWN</span>
+                </button>
+
+                <button class="control empty"></button>
+
+            </div>
+
+            <button id="soundBtn" class="secondary-button">
+                🔊 SOUND: ON
+            </button>
+
+            <button id="restartBtn" class="secondary-button">
+                RESTART LEVEL
+            </button>
+
+        </section>
+
+        <section id="completeScreen" class="screen hidden">
+            <h1 id="completeTitle">Level Complete!</h1>
+
+            <p id="completeMessage"></p>
+
+            <div class="result-box">
+                <p>Score: <strong id="finalScore">0</strong></p>
+                <p>Steps: <strong id="finalSteps">0</strong></p>
+                <p>Time: <strong id="finalTime">0</strong> seconds</p>
+            </div>
+
+            <button id="nextBtn" class="main-button">
+                NEXT LEVEL
+            </button>
+
+            <button id="menuBtn" class="secondary-button">
+                MAIN MENU
+            </button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
